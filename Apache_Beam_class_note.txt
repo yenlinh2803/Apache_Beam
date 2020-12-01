@@ -1,0 +1,23 @@
+Learn:
+- Create transform
+- Map, FlatMap, Filter
+- Branching Pipelines
+- ParDo (  beam.ParDo(SplitRow()) & class SplitRow(beam.DoFn) )
+- Combiner:
+	beam.CombineGlobally(AverageFn())
+	class AverageFn(beam.CombineFn)
+- Composite Transform :
+	'composite accoubts' >> MyTransform()
+	class MyTransform(beam.PTransform)
+
+- CoGroupBy:
+	dept_data 
+	('149633CM', 'Marco')
+	location data
+	('149633CM', '9876843261')
+	('149633CM', '9204232778')
+	| beam.CoGroupByKey()
+
+	('149633CM', {'dept_data': ['Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco', 'Marco'], 'loc_data': ['9876843261', '9204232778']})
+
+- Flatten: 
